@@ -11,7 +11,7 @@ def login():
         user=request.form['nm']
         price=request.form['price']
         dict1={'item':[user],'price':[price]}
-        df=pd.read_csv(r"/Users/rekha/Documents/items.csv",index_col=0)
+        df=pd.read_csv(r"items.csv",index_col=0)
         ind = df.tail(1).index
         df.loc[ind[0] + 1] = [user,price]
         print(df)
